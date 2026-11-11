@@ -30,6 +30,14 @@ html[data-theme=dark]{color-scheme:dark}
 html[data-theme=dark] body{background:#14181d;color:#e8ecef}
 html[data-theme=dark] header,html[data-theme=dark] .hero{background:#000}
 html[data-theme=dark] .nb{background:#3a3f47}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.card{background:#fff;border-radius:10px;box-shadow:0 3px 10px rgba(0,0,0,.1);padding:25px;text-align:center;border-top:8px solid var(--secondary);transition:transform .3s,box-shadow .3s}
+.card:hover{transform:translateY(-5px);box-shadow:0 5px 15px rgba(0,0,0,.2)}
+.card h3{font-size:22px;margin-bottom:15px}
+.sub{font-size:28px;text-align:center;margin:40px 0 20px}
+.btn{display:inline-block;background:var(--button);color:#fff;padding:8px 18px;border-radius:5px;font-weight:bold;text-decoration:none;font-size:15px;transition:background-color .3s}
+.btn:hover{background:#454545}
+html[data-theme=dark] .card{background:#1f252c;color:#e8ecef}
 @media(max-width:700px){.header-content,.header-right{justify-content:center}nav ul{flex-wrap:wrap;justify-content:center}}
 </style>
 </head>
@@ -46,7 +54,22 @@ html[data-theme=dark] .nb{background:#3a3f47}
 </div>
 </div></div></header>
 <section class="hero"><div class="container"><h1>SFC Resources</h1></div></section>
-<main><div class="container" id="app"></div></main>
+<main><div class="container" id="app">
+<div class="grid">
+<div class="card"><h3>Flashcards Page</h3>
+<!-- PUT YOUR FLASHCARDS PAGE LINK IN THE href BELOW (replace #FLASHCARDS_LINK_HERE) -->
+<a class="btn" href="schoolflashcards.com">Open</a></div>
+<div class="card"><h3>Games Page</h3>
+<!-- PUT YOUR GAMES PAGE LINK IN THE href BELOW (replace #GAMES_LINK_HERE) -->
+<a class="btn" href="games.schoolflashcards.com">Open</a></div>
+</div>
+<h2 class="sub">EKFun Resources</h2>
+<div class="grid">
+<div class="card"><h3>17-0 Sheet</h3>
+<!-- PUT YOUR 17-0 SHEET LINK IN THE href BELOW (replace #SHEET_LINK_HERE) -->
+<a class="btn" href="https://docs.google.com/spreadsheets/d/1puEYh8V32pzrY8llh8XCvRHZr81gPOMh/edit?usp=sharing&ouid=107449139578694447602&rtpof=true&sd=true">Open</a></div>
+</div>
+</div></main>
 <footer><div class="container"><p class="c">© 2026 SchoolFlashCards5.</p></div></footer>
 <script>
 document.getElementById('themeBtn').onclick=()=>{const d=document.documentElement,on=d.getAttribute('data-theme')!=='dark';on?d.setAttribute('data-theme','dark'):d.removeAttribute('data-theme');try{localStorage.setItem('sfc-theme',on?'dark':'light')}catch(e){}};
